@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
-    "name": "Zillow Comp Assistant",
-    "description": "This extension lets you extract listing urls from Zillow",
-    "version": "1.0",
+    "name": "Comp Assistant",
+    "description": "This extension lets you extract listing urls from the web and copy them to the clipboard.",
+    "version": "1.1",
     "browser_action": {
         "default_icon": "logo.png",
         "default_popup": "popup.html",
-        "default_title": "Zillow Comp Assistant"
+        "default_title": "Comp Assistant"
     },
     "content_scripts": [{
         "matches": ["*://*.zillow.com/*"],

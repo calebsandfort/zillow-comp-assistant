@@ -1,12 +1,21 @@
-chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
-    var data = request.data || {};
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.action == "clickNext") {
+        $(".zsg-pagination-next > a")[0].click();
+        sendResponse({
+            action: request.action
+        });
+    } else if (request.action == "extract") {
+        var urls = [];
 
-    var urls = [];
+        $("a.hdp-link").each(function () {
+            urls.push($(this).attr("href"));
+        });
 
-    $("a.hdp-link").each(function () {
-       urls.push($(this).attr("href"));
-    });
-
-    sendResponse(urls);
+        sendResponse({
+            urls: urls,
+            clickNext: $(".zsg-pagination-next").size() > 0,
+            action: request.action
+        });
+    }
 });
 
