@@ -20,9 +20,9 @@ function handleResponse(response) {
         }, 2000);
     } else if (response.action == "extract") {
         var urlsDiv = $("#urlsDiv");
-        urlsDiv.append(response.urls.join(", "));
+        urlsDiv.append(response.urls.join(","));
         if(response.clickNext){
-            urlsDiv.append(", ");
+            urlsDiv.append(",");
             sendRequest({action: 'clickNext'});
         }
         else{

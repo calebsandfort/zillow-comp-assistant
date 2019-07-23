@@ -7,7 +7,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     } else if (request.action == "extract") {
         var urls = [];
 
-        $("a.hdp-link").each(function () {
+        $("a.list-card-link").each(function () {
             urls.push($(this).attr("href"));
         });
 
